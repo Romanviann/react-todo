@@ -1,0 +1,21 @@
+.form-container {
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+    flex-wrap: wrap;
+}
+
+.form-input {
+    flex-basis: 20%;
+    border-radius: 50px;
+    margin: 10px 25px 10px 0;
+    height: 50px;
+    text-indent: 10px;
+    border: 1px solid gray;
+}
+
+.form-button {
+    border-radius: 50px;
+    border: 0;
+    background: none;
+}

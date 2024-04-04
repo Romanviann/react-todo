@@ -6,6 +6,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+}
+
+.navbar-title {
+    margin-right: 15px;
 }
 
 .navbar-content {
