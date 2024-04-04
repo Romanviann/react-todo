@@ -1,7 +1,6 @@
 .form-container {
     display: flex;
     flex-direction: row;
-    padding: 25px;
     flex-wrap: wrap;
 }
 
