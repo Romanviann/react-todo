@@ -8,6 +8,7 @@ export default function ToDoForm({addTask}) {
         const form = event.target;
         const taskData = new FormData(form);
         addTask(Object.fromEntries(taskData.entries()));
+        form.reset();
     }
 
     return (

@@ -1,13 +1,19 @@
 import React from "react";
+import "./Task.css";
 
-export default function Task({task}) {
+export default function Task({task, borderBottom}) {
 
     return (
-        <div>
-            <div>
+        <div className={"task-container"} style={{borderBottom: borderBottom}}>
+            <div className={"task-body"}>
                 <h3>{task.title}</h3>
                 <h5>{task.description}</h5>
             </div>
+            <div className={"task-controls"}>
+                <button type={"button"} className={"task-control-buttons delete-button"}>Delete</button>
+                <button type={"button"} className={"task-control-buttons check-button"}>Mark Complete</button>
+            </div>
+
         </div>
     );
 }
