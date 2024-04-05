@@ -11,13 +11,20 @@ function App() {
         {id: 1, title: "Sample title", description: "sample description that could be long-ish", isDone: false}
     ]);
 
+    function addTask(task) {
+        task.id = tasks.length + 1;
+        setTasks((oldTasks) => {
+            return [task, ...oldTasks]
+        })
+    }
+
     return (
         <>
             <Navbar></Navbar>
             <div className="container">
                 <h1 className="reddit-mono-regular margin-25">Welcome to the React To-Do app. Start adding To-dos using
                     the + button</h1>
-                <ToDoForm></ToDoForm>
+                <ToDoForm addTask={addTask}></ToDoForm>
                 <TasksList tasks={tasks}></TasksList>
             </div>
         </>
