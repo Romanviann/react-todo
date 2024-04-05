@@ -8,7 +8,7 @@ import TasksList from "./components/TasksList/TasksList.jsx";
 function App() {
 
     const [tasks, setTasks] = useState([
-        {title: "Sample title", description: "sample description that could be long-ish", isDone: false}
+        {id: 1, title: "Sample title", description: "sample description that could be long-ish", isDone: false}
     ]);
 
     return (
