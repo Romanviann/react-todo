@@ -23,6 +23,12 @@ function App() {
         })
     }
 
+    function markComplete(taskId) {
+        setTasks((oldTasks) => {
+           return oldTasks.map((task) => task.id === taskId ? {...task, isDone: !task.isDone} : task)
+        })
+    }
+
     return (
         <>
             <Navbar></Navbar>
@@ -30,7 +36,7 @@ function App() {
                 <h1 className="reddit-mono-regular margin-25">Welcome to the React To-Do app. Start adding To-dos using
                     the + button</h1>
                 <ToDoForm addTask={addTask}></ToDoForm>
-                <TasksList deleteTask={deleteTask} tasks={tasks}></TasksList>
+                <TasksList markComplete={markComplete} deleteTask={deleteTask} tasks={tasks}></TasksList>
             </div>
         </>
     )
