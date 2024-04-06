@@ -1,5 +1,4 @@
 import {useState} from 'react'
-
 import './App.css'
 import Navbar from "./components/Navbar/Navbar.jsx";
 import ToDoForm from "./components/ToDoForm/ToDoForm.jsx";
@@ -18,6 +17,12 @@ function App() {
         })
     }
 
+    function deleteTask(taskId) {
+        setTasks(() => {
+            return tasks.filter(task => task.id !== taskId)
+        })
+    }
+
     return (
         <>
             <Navbar></Navbar>
@@ -25,7 +30,7 @@ function App() {
                 <h1 className="reddit-mono-regular margin-25">Welcome to the React To-Do app. Start adding To-dos using
                     the + button</h1>
                 <ToDoForm addTask={addTask}></ToDoForm>
-                <TasksList tasks={tasks}></TasksList>
+                <TasksList deleteTask={deleteTask} tasks={tasks}></TasksList>
             </div>
         </>
     )

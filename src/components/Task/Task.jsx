@@ -1,7 +1,7 @@
 import React from "react";
 import "./Task.css";
 
-export default function Task({task, borderBottom}) {
+export default function Task({task, borderBottom, deleteTask}) {
 
     return (
         <div className={"task-container"} style={{borderBottom: borderBottom}}>
@@ -10,7 +10,7 @@ export default function Task({task, borderBottom}) {
                 <h5>{task.description}</h5>
             </div>
             <div className={"task-controls"}>
-                <button type={"button"} className={"task-control-buttons delete-button"}>Delete</button>
+                <button onClick={() => deleteTask(task.id)} type={"button"} className={"task-control-buttons delete-button"}>Delete</button>
                 <button type={"button"} className={"task-control-buttons check-button"}>Mark Complete</button>
             </div>
 
