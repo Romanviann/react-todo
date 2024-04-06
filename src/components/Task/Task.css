@@ -1,0 +1,32 @@
+.task-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.task-control-buttons {
+    border: 1px solid gray;
+    border-radius: 50px;
+    padding: 10px;
+    background: none;
+    margin: 5px 10px 5px 10px;
+}
+
+.delete-button {
+    color: red;
+}
+
+.check-button {
+    color: limegreen;
+}
+
+.task-body {
+    word-wrap: break-word;
+}
+
+.task-controls {
+    display: flex;
+    flex-direction: column;
+}
