@@ -3,15 +3,17 @@ import './App.css'
 import Navbar from "./components/Navbar/Navbar.jsx";
 import ToDoForm from "./components/ToDoForm/ToDoForm.jsx";
 import TasksList from "./components/TasksList/TasksList.jsx";
+import {v4 as uuidv4} from 'uuid';
+
 
 function App() {
 
     const [tasks, setTasks] = useState([
-        {id: 1, title: "Sample title", description: "sample description that could be long-ish", isDone: false}
+        {id: uuidv4(), title: "Sample title", description: "sample description that could be long-ish", isDone: false}
     ]);
 
     function addTask(task) {
-        task.id = tasks.length + 1;
+        task.id = uuidv4();
         setTasks((oldTasks) => {
             return [task, ...oldTasks]
         })
@@ -25,7 +27,7 @@ function App() {
 
     function markComplete(taskId) {
         setTasks((oldTasks) => {
-           return oldTasks.map((task) => task.id === taskId ? {...task, isDone: !task.isDone} : task)
+            return oldTasks.map((task) => task.id === taskId ? {...task, isDone: !task.isDone} : task)
         })
     }
 
